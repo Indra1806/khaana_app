@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offers</title>
+    <link rel="stylesheet" href="offers.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Special Offers</h1>
+        
+        <div class="offer" id="purchase-offer">
+            <h2>Purchase Offers</h2>
+            <button onclick="generateCoupon('purchase')">Generate Coupon</button>
+            <p id="purchase-coupon"></p>
+        </div>
+        
+        <div class="offer" id="student-offer">
+            <h2>Student Offers</h2>
+            <button onclick="generateCoupon('student')">Generate Coupon</button>
+            <p id="student-coupon"></p>
+        </div>
+        
+        <div class="offer" id="birthday-offer">
+            <h2>Birthday Offers</h2>
+            <input type="date" id="birthday-input" placeholder="Enter your DOB">
+            <button onclick="validateBirthday()">Generate Coupon</button>
+            <p id="birthday-coupon"></p>
+        </div>
+        
+        <div class="offer" id="anniversary-offer">
+            <h2>Anniversary Offers</h2>
+            <input type="date" id="anniversary-input" placeholder="Enter your Anniversary Date">
+            <button onclick="validateAnniversary()">Generate Coupon</button>
+            <p id="anniversary-coupon"></p>
+        </div>
+    </div>
+
+    <script src="offers.js"></script>
+</body>
+</html>

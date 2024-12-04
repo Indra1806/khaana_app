@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4; /* Light background */
+        }
+        .payment-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 8px; /* Rounded corners */
+            background-color: #fff; /* White background */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        h1 {
+            color: #4caf50; /* Green color for title */
+        }
+        p {
+            font-size: 1.2em; /* Font size for instructions */
+        }
+        button {
+            padding: 10px 20px; /* Padding for button */
+            background-color: #4caf50; /* Green color for button */
+            color: white; /* White text */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        button:hover {
+            background-color: #10d0e6; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Payment Gateway</h1>
+        <p>Your order has been placed successfully!</p>
+        <p>Thank you for your purchase!</p>
+        <button onclick="window.location.href='index.html'">Go Back</button>
+    </div>
+</body>
+</html>

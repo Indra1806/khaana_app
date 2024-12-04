@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background for better contrast */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff; /* White background for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+header {
+    background-color: #4caf50; /* Green color for header */
+    color: #fff; /* White text */
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Larger font size for the title */
+}
+
+header p {
+    font-size: 1.2em; /* Slightly larger font for the subtitle */
+}
+
+section {
+    margin-top: 20px; /* Space between sections */
+}
+
+h2 {
+    text-align: center;
+    color: #333; /* Darker color for section titles */
+}
+
+.snack-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items */
+}
+
+.snack-item {
+    width: 220px; /* Fixed width for snack items */
+    margin: 15px; /* Space between items */
+    padding: 15px; /* Padding inside each item */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff; /* White background for each item */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.snack-item:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.snack-item h3 {
+    margin-top: 0; /* Remove top margin */
+    color: #4caf50; /* Green color for snack names */
+}
+
+.snack-item p {
+    font-size: 1.1em; /* Font size for prices */
+    font-weight: bold; /* Bold text for prices */
+    color: #666; /* Darker gray for price text */
+}
+
+.cart {
+    margin-top: 40px; /* Space above cart */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for cart */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.cart h2 {
+    text-align: center;
+    color: #333; /* Darker color for cart title */
+}
+
+#cart-items {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.cart-item {
+    margin: 5px 0; /* Space between cart items */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between item text and button */
+    align-items: center; /* Center items vertically */
+}
+
+.cart-item button {
+    background-color: #f44336; /* Red color for remove button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.cart-item button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+#order-now {
+    display: block; /* Block display for button */
+    margin: 20px auto; /* Center the button */
+    padding: 10px 20px; /* Padding for button */
+    background-color: #4caf50; /* Green color for order button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.2em; /* Larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#order-now:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+.fade-in {
+    animation: fadeIn 0.5s; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start transparent */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+    }
+}

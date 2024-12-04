@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Khaana Reviews</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Khaana Reviews</h1>
+        <div class="rating">
+            <span id="rating">0</span>/5
+        </div>
+        <div class="stars" id="stars">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+        </div>
+        <p>Share your review:</p>
+        <textarea id="review" placeholder="Write your review here"></textarea>
+        <button id="submit">Submit</button>
+        <div class="reviews" id="reviews">
+            <h2>Good Reviews</h2>
+            <div id="good-reviews">
+                <!-- Good reviews will be displayed here -->
+            </div>
+            <h2>Bad Reviews</h2>
+            <div id="bad-reviews">
+                <!-- Bad reviews will be displayed here -->
+            </div>
+        </div>
+    </div>
+    <script src="home.js"></script>
+</body>
+
+</html>

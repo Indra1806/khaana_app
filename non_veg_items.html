@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Vegetarian Items - Food Delivery</title>
+    <link rel="stylesheet" href="non_veg_items.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Non-Vegetarian Menu</h1>
+            <p>Delicious non-vegetarian dishes delivered to your doorstep!</p>
+        </header>
+
+        <section>
+            <h2>Available Non-Vegetarian Items</h2>
+            <div class="item-list">
+                <div class="item" onclick="addToCart('Chicken Biryani', 250)">
+                    <h3>Chicken Biryani</h3>
+                    <p>Price: ₹250</p>
+                </div>
+                <div class="item" onclick="addToCart('Butter Chicken', 300)">
+                    <h3>Butter Chicken</h3>
+                    <p>Price: ₹300</p>
+                </div>
+                <div class="item" onclick="addToCart('Fish Curry', 280)">
+                    <h3>Fish Curry</h3>
+                    <p>Price: ₹280</p>
+                </div>
+                <div class="item" onclick="addToCart('Mutton Rogan Josh', 350)">
+                    <h3>Mutton Rogan Josh</h3>
+                    <p>Price: ₹350</p>
+                </div>
+                <div class="item" onclick="addToCart('Tandoori Chicken', 320)">
+                    <h3>Tandoori Chicken</h3>
+                    <p>Price: ₹320</p>
+                </div>
+                <div class="item" onclick="addToCart('Prawn Masala', 400)">
+                    <h3>Prawn Masala</h3>
+                    <p>Price: ₹400</p>
+                </div>
+                <div class="item" onclick="addToCart('Chicken Tikka', 250)">
+                    <h3>Chicken Tikka</h3>
+                    <p>Price: ₹250</p>
+                </div>
+                <div class="item" onclick="addToCart('Mutton Seekh Kebab', 300)">
+                    <h3>Mutton Seekh Kebab</h3>
+                    <p>Price: ₹300</p>
+                </div>
+                <div class="item" onclick="addToCart('Fish Fry', 220)">
+                    <h3>Fish Fry</h3>
+                    <p>Price: ₹220</p>
+                </div>
+                <div class="item" onclick="addToCart('Chicken Malai Tikka', 280)">
+                    <h3>Chicken Malai Tikka</h3>
+                    <p>Price: ₹280</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p id="total-price">Total Price: ₹0</p>
+            <button id="order-now" onclick="redirectToOrder()">Order Now</button>
+        </div>
+    </div>
+
+    <script src="non_veg_items.js"></script>
+</body>
+</html>

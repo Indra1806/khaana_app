@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetarian Items - Food Delivery</title>
+    <link rel="stylesheet" href="veg_items.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vegetarian Items</h1>
+            <p>Delicious vegetarian food delivered to your doorstep!</p>
+        </header>
+
+        <section>
+            <h2>Available Vegetarian Items</h2>
+            <div class="veg-list">
+                <div class="veg-item" onclick="addToCart('Vegetable Biryani', 200)">
+                    <h3>Vegetable Biryani</h3>
+                    <p>Price: ₹200/Single</p>
+                </div>
+                <div class="veg-item" onclick="addToCart('Paneer Tikka', 350)">
+                    <h3>Paneer Tikka</h3>
+                    <p>Price: ₹350/Plate</p>
+                </div>
+                <div class="veg-item" onclick="addToCart('Vegetable Samosa', 120)">
+                    <h3>Vegetable Samosa</h3>
+                    <p>Price: ₹120/Plate/3</p>
+                </div>
+                <div class="veg-item" onclick="addToCart('Palak Paneer', 300)">
+                    <h3>Palak Paneer</h3>
+                    <p>Price: ₹300/Plate</p>
+                </div>
+                <div class="veg-item" onclick="addToCart('Chole Bhature', 250)">
+                    <h3>Chole Bhature</h3>
+                    <p>Price: ₹250/Plate</p>
+                </div>
+                <div class="veg-item" onclick="addToCart('Aloo Gobi', 180)">
+                    <h3>Aloo Gobi</h3>
+                    <p>Price: ₹180/Single</p>
+                </div>
+                <div class="veg-item" onclick="addToCart('Paneer Butter Masala', 320)">
+                    <h3>Paneer Butter Masala</h3>
+                    <p>Price: ₹320/Single</p>
+                </div>
+                <div class="veg-item" onclick="addToCart('Dal Makhani', 200)">
+                    <h3>Dal Makhani</h3>
+                    <p>Price: ₹200/Plate</p>
+                </div>
+                <div class="veg-item" onclick="addToCart('Mixed Vegetable Curry', 220)">
+                    <h3>Mixed Vegetable Curry</h3>
+                    <p>Price: ₹220/650g</p>
+                </div>
+                <div class="veg-item" onclick="addToCart('Vegetable Pulao', 210)">
+                    <h3>Vegetable Pulao</h3>
+                    <p>Price: ₹210/Single</p>
+                </div>
+                <!-- Add more vegetarian items as needed -->
+            </div>
+        </section>
+
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p id="total-price">Total Price: ₹0</p>
+            <button id="order-now" onclick="redirectToOrder()">Order Now</button>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let totalPrice = 0;
+
+        function addToCart(itemName, itemPrice) {
+            cart.push({ name: itemName, price: itemPrice });
+            totalPrice += itemPrice;
+
+            updateCartDisplay();
+        }
+
+        function removeFromCart(index) {
+            totalPrice -= cart[index].price;
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = ''; // Clear the current cart display
+
+            cart.forEach((item, index) => {
+                const newItem = document.createElement('li');
+                newItem.textContent = `${item.name} - ₹${item.price}`;
+                newItem.classList.add('cart-item');
+
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.onclick = () => removeFromCart(index);
+                newItem.appendChild(removeButton);
+
+                cartItems.appendChild(newItem);
+                newItem.classList.add('fade-in');
+ });
+
+            document.getElementById('total-price').textContent = `Total Price: ₹${totalPrice}`;
+        }
+
+        function redirectToOrder() {
+            window.location.href = 'dummy_payment_gateway.html'; // Redirect to the dummy payment gateway page
+        }
+    </script>
+</body>
+</html>

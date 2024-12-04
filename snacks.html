@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks - Food Delivery</title>
+    <link rel="stylesheet" href="snacks.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Snacks</h1>
+            <p>Delicious snacks delivered to your doorstep!</p>
+        </header>
+
+        <section>
+            <h2>Available Snacks</h2>
+            <div class="snack-list">
+                <div class="snack-item" onclick="addToCart('Samosa', 120)">
+                    <h3>Samosa</h3>
+                    <p>Price: ₹120/250g</p>
+                </div>
+                <div class="snack-item" onclick="addToCart('Vada Pav', 100)">
+                    <h3>Vada Pav</h3>
+                    <p>Price: ₹100/250g/2</p>
+                </div>
+                <div class="snack-item" onclick="addToCart('Pakora', 150)">
+                    <h3>Pakora</h3>
+                    <p>Price: ₹150/500g</p>
+                </div>
+                <div class="snack-item" onclick="addToCart('Bhel Puri', 180)">
+                    <h3>Bhel Puri</h3>
+                    <p>Price: ₹180/500g</p>
+                </div>
+                <div class="snack-item" onclick="addToCart('Chaat', 130)">
+                    <h3>Chaat</h3>
+                    <p>Price: ₹130/5 varities</p>
+                </div>
+                <div class="snack-item" onclick="addToCart('Momos', 200)">
+                    <h3>Momos</h3>
+                    <p>Price: ₹200/250g</p>
+                </div>
+                <div class="snack-item" onclick="addToCart('Spring Rolls', 160)">
+                    <h3>Spring Rolls</h3>
+                    <p>Price: ₹160/5 rolls</p>
+                </div>
+                <div class="snack-item" onclick="addToCart('French Fries', 140)">
+                    <h3>French Fries</h3>
+                    <p>Price: ₹140/250g</p>
+                </div>
+                <div class="snack-item" onclick="addToCart('Nachos', 190)">
+                    <h3>Nachos</h3>
+                    <p>Price: ₹190/kg</p>
+                </div>
+                <div class="snack-item" onclick="addToCart('Pizza', 250)">
+                    <h3>Pizza</h3>
+                    <p>Price: ₹250/regular</p>
+                </div>
+                <!-- Add more snacks as needed -->
+            </div>
+        </section>
+
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p id="total-price">Total Price: ₹0</p>
+            <button id="order-now" onclick="redirectToOrder()">Order Now</button>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let totalPrice = 0;
+
+        function addToCart(itemName, itemPrice) {
+            cart.push({ name: itemName, price: itemPrice });
+            totalPrice += itemPrice;
+
+            updateCartDisplay();
+        }
+
+        function removeFromCart(index) {
+            totalPrice -= cart[index].price;
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = ''; // Clear the current cart display
+
+            cart.forEach((item, index) => {
+                const newItem = document.createElement('li');
+                newItem.textContent = `${item.name} - ₹${item.price}`;
+                newItem.classList.add('cart-item');
+
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.onclick = () => removeFromCart(index);
+                newItem.appendChild(removeButton);
+
+                cartItems.appendChild(newItem);
+                newItem.classList.add('fade-in');
+ });
+
+            document.getElementById('total-price').textContent = `Total Price: ₹${totalPrice}`;
+        }
+
+        function redirectToOrder() {
+            window.location.href = 'dummy_payment_gateway.html'; // Redirect to the dummy payment gateway page
+        }
+    </script>
+</body>
+</html>
